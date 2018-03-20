@@ -55,6 +55,15 @@ router.route('/user/:userId/posts/:postId')
     router.get(postController.edit)
     router.patch(postController.update)
 
+// router.patch('/api/posts/:id', (req, res) => {
+//     Post.findById(req.params.id, (err, thatPost) => {
+//         thatPost.completed = !thatPost.completed
+//         thatPost.save((err, updatedPost) => {
+//         res.json({ success: true, message: "post updated", post: updatedPost })
+//         })
+//     })
+// })
+
 // Create new post
 router.get('/posts/:id/new', postController.new)
     

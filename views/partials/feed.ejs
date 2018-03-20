@@ -29,7 +29,7 @@
                 <div class="col-sm-8">
                 <h5 class="card-title">${serverResponse.data[i]._id}</h5>
                 <p class="card-text"> ${serverResponse.data[i].body}</p>
-                <a href="#" class="btn btn-primary">Edit</a>
+                <a href="#" id="${serverResponse.data[i]._id}" class="btn btn-primary">Edit</a>
                 <a href="#" class="btn btn-primary">Delete</a>
                 </div>
             </div>
@@ -37,5 +37,21 @@
         `)
         }
     })
+
+    $addPostBtn.on('click', () => {
+      const options = {
+        url: '/api/posts',
+        method: 'patch',
+        data: { body: $input.val() }
+      }
+      httpClient(options).then((serverResponse) => {
+        console.log(serverResponse.data)
+        var todo = serverResponse.data.todo
+        appendTodo(todo)
+        // clear the input field after posting
+        $input.val('')
+      })
+    })
 </script>
+
 

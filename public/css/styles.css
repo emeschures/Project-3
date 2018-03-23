@@ -63,14 +63,15 @@
 }
 
 #chat-grid{
-    bottom: 30px;
-    left: 15px;
+
+    top: 50px;
+    left: 5px;
     z-index: 3;
     position: fixed;
-    width: 250px;
-     
-}
+    width: 150px;
 
+
+}
 .hover:hover {
     cursor: pointer;
 }
